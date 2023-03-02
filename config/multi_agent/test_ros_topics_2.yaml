@@ -19,7 +19,7 @@ send_topics:
   srcIP: self # message source IPname
   max_freq: 10 # max sending frequency (Hz) int
   srcPort: 3001 # message source port
-- topic_name: /os_header # send the messages of this ROS topic
+- topic_name: /os_header_se # send the messages of this ROS topic
   msg_type: std_msgs/Header # ROS message type (rosmsg style)
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: self # message source IPname
@@ -33,9 +33,4 @@ recv_topics:
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: robot1 # self IP
   srcPort: 3001 # ports of send_topics should be different
-- topic_name: /rs_header # send the messages of this ROS topic
-  msg_type: std_msgs/Header # ROS message type (rosmsg style)
-  max_freq: 10 # max sending frequency (Hz) int
-  srcIP: robot1 # self IP
-  srcPort: 3002 # ports of send_topics should be different
 
