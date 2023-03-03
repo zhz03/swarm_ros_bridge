@@ -14,7 +14,7 @@ IP:
 ####### Send these ROS messages to remote robots #######
 ## if no send_topics needed, comment all these out
 send_topics:
-- topic_name: /tracking2/transformed_objects_box_score_label # the received messages will be published in this topic
+- topic_name: /tracking/transformed_objects_box_score_label # the received messages will be published in this topic
   msg_type: visualization_msgs/MarkerArray # ROS message type (rosmsg style)
   srcIP: self # message source IPname
   max_freq: 10 # max sending frequency (Hz) int
@@ -24,12 +24,12 @@ send_topics:
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: self # message source IPname
   srcPort: 3006 # ports of send_topics should be different
-- topic_name: /tracking2/transformed_objects_header_box_score_label # the received messages will be published in this topic
+- topic_name: /tracking/transformed_objects_header_box_score_label # the received messages will be published in this topic
   msg_type: visualization_header_msgs/MarkerArrayHeader # ROS message type (rosmsg style)
   srcIP: self # self IP 
   max_freq: 10 # max sending frequency (Hz) int
   srcPort: 3007 # message source port
-- topic_name: /tracking2/transformed_det_box_score_label # the received messages will be published in this topic
+- topic_name: /tracking/transformed_det_box_score_label # the received messages will be published in this topic
   msg_type: visualization_msgs/MarkerArray # ROS message type (rosmsg style)
   srcIP: self # self IP 
   max_freq: 10 # max sending frequency (Hz) int
@@ -38,7 +38,7 @@ send_topics:
 ####### receive these ROS messages from remote robots #######
 ## if no recv_topics needed, comment all these out
 recv_topics:
-- topic_name: /tracking/transformed_objects_box_score_label # send the messages of this ROS topic
+- topic_name: /tracking2/transformed_objects_box_score_label # send the messages of this ROS topic
   msg_type: visualization_msgs/MarkerArray # ROS message type (rosmsg style)
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: robot1 # self IP
@@ -48,12 +48,12 @@ recv_topics:
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: robot1 # self IP
   srcPort: 3002 # ports of send_topics should be different
-- topic_name: /tracking/transformed_objects_header_box_score_label # the received messages will be published in this topic
+- topic_name: /tracking2/transformed_objects_header_box_score_label # the received messages will be published in this topic
   msg_type: visualization_header_msgs/MarkerArrayHeader # ROS message type (rosmsg style)
   srcIP: robot1 # self IP 
   max_freq: 10 # max sending frequency (Hz) int
   srcPort: 3003 # message source port
-- topic_name: /tracking/transformed_det_box_score_label # the received messages will be published in this topic
+- topic_name: /tracking2/transformed_det_box_score_label # the received messages will be published in this topic
   msg_type: visualization_msgs/MarkerArray # ROS message type (rosmsg style)
   srcIP: robot1 # self IP 
   max_freq: 10 # max sending frequency (Hz) int
