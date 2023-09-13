@@ -35,18 +35,6 @@
 #define MSG_TYPE3 "std_msgs/String"
 #define MSG_CLASS3 std_msgs::String
 
-#include <visualization_msgs/MarkerArray.h>
-#define MSG_TYPE4 "visualization_msgs/MarkerArray"
-#define MSG_CLASS4 visualization_msgs::MarkerArray
-
-#include <sensor_msgs/LaserScan.h>
-#define MSG_TYPE5 "sensor_msgs/LaserScan"
-#define MSG_CLASS5 sensor_msgs::LaserScan
-
-#include <std_msgs/Header.h>
-#define MSG_TYPE6 "std_msgs/Header"
-#define MSG_CLASS6 std_msgs::Header
-
 // #include <xxx/yy.h>
 // #define MSG_TYPE4 "xxx/yy"
 // #define MSG_CLASS4 xxx::yy
