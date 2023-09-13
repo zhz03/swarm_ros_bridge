@@ -65,10 +65,11 @@ template <typename T, int i>
 void sub_cb(const T &msg)
 {
   /* frequency control */
-  auto ignore_flag = send_freq_control(i);
-  if (ignore_flag){
-    return; // discard this message sending, abort
-  }
+
+  // auto ignore_flag = send_freq_control(i);
+  // if (ignore_flag){
+  //   return; // discard this message sending, abort
+  // }
 
   /* serialize the sending messages into send_buffer */
   namespace ser = ros::serialization;
