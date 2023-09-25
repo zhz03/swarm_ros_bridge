@@ -286,6 +286,14 @@ int main(int argc, char **argv)
   {
     const std::string url = "tcp://" + sendTopics[i].ip + ":" + std::to_string(sendTopics[i].port);
     std::unique_ptr<zmqpp::socket> sender(new zmqpp::socket(context, zmqpp::socket_type::pub));
+    
+    // Add ZMQ options here:
+    int tcp_keep_alive = 1;
+    zmq_setsockopt(sender->get(), ZMQ_TCP_KEEPALIVE, &tcp_keep_alive, sizeof(tcp_keep_alive));
+
+    int tcp_keep_idle = 10; // 10 seconds 
+    zmq_setsockopt(sender->get(), ZMQ_TCP_KEEPALIVE_IDLE, &tcp_keep_idle, sizeof(tcp_keep_idle));
+
     sender->bind(url);
     senders.emplace_back(std::move(sender)); //sender is now released by std::move
   }
@@ -296,6 +304,13 @@ int main(int argc, char **argv)
     const std::string url = "tcp://" + recvTopics[i].ip + ":" + std::to_string(recvTopics[i].port);
     std::string const zmq_topic = ""; // "" means all zmq topic
     std::unique_ptr<zmqpp::socket> receiver(new zmqpp::socket(context, zmqpp::socket_type::sub));
+    // Add ZMQ options here:
+    int tcp_keep_alive = 1;
+    zmq_setsockopt(receiver->get(), ZMQ_TCP_KEEPALIVE, &tcp_keep_alive, sizeof(tcp_keep_alive));
+
+    int tcp_keep_idle = 10; // 10 seconds
+    zmq_setsockopt(receiver->get(), ZMQ_TCP_KEEPALIVE_IDLE, &tcp_keep_idle, sizeof(tcp_keep_idle));
+
     receiver->subscribe(zmq_topic);
     receiver->connect(url);
     receivers.emplace_back(std::move(receiver));
