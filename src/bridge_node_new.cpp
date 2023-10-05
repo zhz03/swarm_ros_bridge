@@ -292,7 +292,7 @@ int main(int argc, char **argv)
     // zmq_setsockopt(sender->get(), ZMQ_TCP_KEEPALIVE, &tcp_keep_alive, sizeof(tcp_keep_alive));
     sender->set(zmqpp::socket_option::tcp_keepalive, tcp_keep_alive);
 
-    int tcp_keep_idle = 10; // 10 seconds 
+    int tcp_keep_idle = 1; // 1 seconds 
     // zmq_setsockopt(sender->get(), ZMQ_TCP_KEEPALIVE_IDLE, &tcp_keep_idle, sizeof(tcp_keep_idle));
     sender->set(zmqpp::socket_option::tcp_keepalive_idle, tcp_keep_idle);
 
@@ -311,7 +311,7 @@ int main(int argc, char **argv)
     // zmq_setsockopt(receiver->get(), ZMQ_TCP_KEEPALIVE, &tcp_keep_alive, sizeof(tcp_keep_alive));
     receiver->set(zmqpp::socket_option::tcp_keepalive, tcp_keep_alive);
 
-    int tcp_keep_idle = 10; // 10 seconds
+    int tcp_keep_idle = 1; // 10 seconds
     // zmq_setsockopt(receiver->get(), ZMQ_TCP_KEEPALIVE_IDLE, &tcp_keep_idle, sizeof(tcp_keep_idle));
     receiver->set(zmqpp::socket_option::tcp_keepalive_idle, tcp_keep_idle);
 
