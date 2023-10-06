@@ -47,6 +47,10 @@
 #define MSG_TYPE6 "std_msgs/Header"
 #define MSG_CLASS6 std_msgs::Header
 
+#include <sensor_msgs/PointCloud2.h>
+#define MSG_TYPE7 "sensor_msgs/PointCloud2"
+#define MSG_CLASS7 sensor_msgs::PointCloud2
+
 // #include <xxx/yy.h>
 // #define MSG_TYPE4 "xxx/yy"
 // #define MSG_CLASS4 xxx::yy
