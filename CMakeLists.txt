@@ -8,7 +8,14 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   geometry_msgs
   sensor_msgs
+  detection_msgs
 )
+
+generate_messages(
+   DEPENDENCIES
+   geometry_msgs   sensor_msgs   detection_msgs 
+)
+
 
 catkin_package(
    INCLUDE_DIRS include
@@ -18,6 +25,7 @@ include_directories(
   include
   ${catkin_INCLUDE_DIRS}
 )
+
 
 add_executable(bridge_node src/bridge_node.cpp)
 
@@ -34,3 +42,7 @@ target_link_libraries(bridge_node_new
    zmq
    zmqpp
 )
+
+add_dependencies(bridge_node ${catkin_EXPORTED_TARGETS})
+add_dependencies(bridge_node_new ${catkin_EXPORTED_TARGETS})
+

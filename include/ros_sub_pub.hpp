@@ -51,6 +51,18 @@
 #define MSG_TYPE7 "sensor_msgs/PointCloud2"
 #define MSG_CLASS7 sensor_msgs::PointCloud2
 
+#include <detection_msgs/BevFeature.h>
+#define MSG_TYPE8 "detection_msgs/BevFeature"
+#define MSG_CLASS8 detection_msgs::BevFeature
+
+#include <detection_msgs/BevFeature.h>
+#define MSG_TYPE8 "detection_msgs/BevFeature"
+#define MSG_CLASS8 detection_msgs::BevFeature
+
+#include <detection_msgs/BoundingBoxes.h>
+#define MSG_TYPE8 "detection_msgs/BoundingBoxes"
+#define MSG_CLASS8 detection_msgs::BoundingBoxes
+
 // #include <xxx/yy.h>
 // #define MSG_TYPE4 "xxx/yy"
 // #define MSG_CLASS4 xxx::yy
