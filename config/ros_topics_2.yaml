@@ -8,13 +8,13 @@
 ### list all <IPname: IP> here (IPname can be set arbitrarily) ###
 IP:
   self: '*'   # '*' stands for all self IPs
-  robot1: 192.168.3.11
+  robot1: 192.168.3.21
   test_local: 127.0.0.1 # just for local machine test
 
 ####### Send these ROS messages to remote robots #######
 ## if no send_topics needed, comment all these out
 send_topics:
-- topic_name: /tracking2/transformed_objects_fusion_box_score # the received messages will be published in this topic
+- topic_name: /tracking2/transformed_objects_box_score_label # the received messages will be published in this topic
   msg_type: visualization_msgs/MarkerArray # ROS message type (rosmsg style)
   srcIP: self # self IP 
   max_freq: 10 # max sending frequency (Hz) int
@@ -28,7 +28,7 @@ send_topics:
 ####### receive these ROS messages from remote robots #######
 ## if no recv_topics needed, comment all these out
 recv_topics:
-- topic_name: /tracking/transformed_objects_fusion_box_score # send the messages of this ROS topic
+- topic_name: /tracking/transformed_objects_box_score_label # send the messages of this ROS topic
   msg_type: visualization_msgs/MarkerArray # ROS message type (rosmsg style)
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: robot1 # message source IPname
