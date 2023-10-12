@@ -55,13 +55,9 @@
 #define MSG_TYPE8 "detection_msgs/BevFeature"
 #define MSG_CLASS8 detection_msgs::BevFeature
 
-#include <detection_msgs/BevFeature.h>
-#define MSG_TYPE8 "detection_msgs/BevFeature"
-#define MSG_CLASS8 detection_msgs::BevFeature
-
-#include <detection_msgs/BoundingBoxes.h>
-#define MSG_TYPE8 "detection_msgs/BoundingBoxes"
-#define MSG_CLASS8 detection_msgs::BoundingBoxes
+#include <geometry_msgs/PoseStamped.h>
+#define MSG_TYPE9 "geometry_msgs/PoseStamped"
+#define MSG_CLASS9 geometry_msgs::PoseStamped
 
 // #include <xxx/yy.h>
 // #define MSG_TYPE4 "xxx/yy"
