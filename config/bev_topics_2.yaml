@@ -24,11 +24,16 @@ send_topics:
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: self # self IP
   srcPort: 3002 # ports of send_topics should be different
-- topic_name: /veh1/bev # send the messages of this ROS topic
+- topic_name: /ouster_nw/bev # send the messages of this ROS topic
   msg_type: detection_msgs/BevFeature # ROS message type (rosmsg style)
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: self # message source IPname
   srcPort: 3003 # ports of send_topics should be different
+- topic_name: /infra_pose
+  msg_type: geometry_msgs/PoseStamped # ROS message type (rosmsg style)
+  max_freq: 10 # max sending frequency (Hz) int
+  srcIP: self
+  srcPort: 3004 # ports of send_topics should be different
 
 ####### receive these ROS messages from remote robots #######
 ## if no recv_topics needed, comment all these out
@@ -48,3 +53,8 @@ recv_topics:
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: robot1
   srcPort: 3003 # ports of send_topics should be different  
+- topic_name: /fusion_pose
+  msg_type: geometry_msgs/PoseStamped # ROS message type (rosmsg style)
+  max_freq: 10 # max sending frequency (Hz) int
+  srcIP: robot1
+  srcPort: 3004 # ports of send_topics should be different  
