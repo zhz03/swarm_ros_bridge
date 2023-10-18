@@ -24,6 +24,11 @@ send_topics:
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: self # self IP
   srcPort: 3002 # ports of send_topics should be different
+- topic_name: /tracking/objects_header_bbx_score_label # the received messages will be published in this topic
+  msg_type: visualization_msgs/MarkerArray # ROS message type (rosmsg style)
+  srcIP: self # self IP 
+  max_freq: 10 # max sending frequency (Hz) int
+  srcPort: 3003 # message source port
 
 ####### receive these ROS messages from remote robots #######
 ## if no recv_topics needed, comment all these out
@@ -38,4 +43,9 @@ recv_topics:
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: robot1 # message source IPname
   srcPort: 3002 # ports of send_topics should be different
+- topic_name: /tracking/objects_header_bbx_score_label # the received messages will be published in this topic
+  msg_type: visualization_msgs/MarkerArray # ROS message type (rosmsg style)
+  srcIP: robot1 # self IP 
+  max_freq: 10 # max sending frequency (Hz) int
+  srcPort: 3003 # message source port
 
