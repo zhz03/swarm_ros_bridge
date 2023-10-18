@@ -8,7 +8,7 @@
 ### list all <IPname: IP> here (IPname can be set arbitrarily) ###
 IP:
   self: '*'   # '*' stands for all self IPs
-  robot2: 192.168.3.11
+  robot2: 192.168.0.50
   test_local: 127.0.0.1 # just for local machine test
 
 ####### Send these ROS messages to remote robots #######
@@ -38,3 +38,13 @@ recv_topics:
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: robot2 # message source IPname
   srcPort: 3002 # ports of send_topics should be different
+- topic_name: /ouster_nw/bev # send the messages of this ROS topic
+  msg_type: detection_msgs/BevFeature # ROS message type (rosmsg style)
+  max_freq: 10 # max sending frequency (Hz) int
+  srcIP: robot2 # message source IPname
+  srcPort: 3003 # ports of send_topics should be different
+- topic_name: /infra_pose
+  msg_type: geometry_msgs/PoseStamped # ROS message type (rosmsg style)
+  max_freq: 10 # max sending frequency (Hz) int
+  srcIP: robot2 # self IP
+  srcPort: 3004 # ports of send_topics should be different   
