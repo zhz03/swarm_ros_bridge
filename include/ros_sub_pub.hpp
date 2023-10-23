@@ -59,6 +59,10 @@
 #define MSG_TYPE9 "geometry_msgs/PoseStamped"
 #define MSG_CLASS9 geometry_msgs::PoseStamped
 
+#include <visualization_header_msgs/MarkerArrayHeader.h>
+#define MSG_TYPE10 "visualization_header_msgs/MarkerArrayHeader"
+#define MSG_CLASS10 visualization_header_msgs::MarkerArrayHeader
+
 // #include <xxx/yy.h>
 // #define MSG_TYPE4 "xxx/yy"
 // #define MSG_CLASS4 xxx::yy
