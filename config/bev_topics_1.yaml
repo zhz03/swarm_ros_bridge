@@ -8,53 +8,43 @@
 ### list all <IPname: IP> here (IPname can be set arbitrarily) ###
 IP:
   self: '*'   # '*' stands for all self IPs
-  robot2: 192.168.3.30
+  robot2: 192.168.3.10
   test_local: 127.0.0.1 # just for local machine test
 
 ####### Send these ROS messages to remote robots #######
 ## if no send_topics needed, comment all these out
 send_topics:
-- topic_name: /tracking/transformed_objects_fusion_box_score # send the messages of this ROS topic
-  msg_type: visualization_msgs/MarkerArray # ROS message type (rosmsg style)
-  max_freq: 10 # max sending frequency (Hz) int
-  srcIP: self # self IP
-  srcPort: 3001 # ports of send_topics should be different
-- topic_name: /rs_header # send the messages of this ROS topic
+- topic_name: /os_header_se # send the messages of this ROS topic
   msg_type: std_msgs/Header # ROS message type (rosmsg style)
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: self # self IP
-  srcPort: 3002 # ports of send_topics should be different
+  srcPort: 3001 # ports of send_topics should be different
 - topic_name: /veh2/bev
   msg_type: detection_msgs/BevFeature # ROS message type (rosmsg style)
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: self # self IP
-  srcPort: 3003 # ports of send_topics should be different  
+  srcPort: 3002 # ports of send_topics should be different  
 - topic_name: /fusion_pose
   msg_type: geometry_msgs/PoseStamped # ROS message type (rosmsg style)
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: self # self IP
-  srcPort: 3004 # ports of send_topics should be different  
+  srcPort: 3003 # ports of send_topics should be different  
 
 ####### receive these ROS messages from remote robots #######
 ## if no recv_topics needed, comment all these out
 recv_topics:
-- topic_name: /tracking2/transformed_objects_fusion_box_score # the received messages will be published in this topic
-  msg_type: visualization_msgs/MarkerArray # ROS message type (rosmsg style)
-  srcIP: robot2 # message source IPname
-  max_freq: 10 # max sending frequency (Hz) int
-  srcPort: 3001 # message source port
 - topic_name: /os_header # send the messages of this ROS topic
   msg_type: std_msgs/Header # ROS message type (rosmsg style)
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: robot2 # message source IPname
-  srcPort: 3002 # ports of send_topics should be different
+  srcPort: 3001 # ports of send_topics should be different
 - topic_name: /ouster_nw/bev # send the messages of this ROS topic
   msg_type: detection_msgs/BevFeature # ROS message type (rosmsg style)
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: robot2 # message source IPname
-  srcPort: 3003 # ports of send_topics should be different
+  srcPort: 3002 # ports of send_topics should be different
 - topic_name: /infra_pose
   msg_type: geometry_msgs/PoseStamped # ROS message type (rosmsg style)
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: robot2 # self IP
-  srcPort: 3004 # ports of send_topics should be different   
+  srcPort: 3003 # ports of send_topics should be different   
