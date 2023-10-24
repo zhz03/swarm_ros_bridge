@@ -58,3 +58,8 @@ recv_topics:
   srcIP: robot1 # self IP 
   max_freq: 10 # max sending frequency (Hz) int
   srcPort: 3004 # message source port
+- topic_name: /tracking/trajectory # the received messages will be published in this topic
+  msg_type: visualization_msgs/MarkerArray # ROS message type (rosmsg style)
+  srcIP: robot1 # self IP 
+  max_freq: 10 # max sending frequency (Hz) int
+  srcPort: 3005 # message source port
