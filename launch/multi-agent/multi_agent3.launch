@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+<group ns="sim3">
+  <node pkg="swarm_ros_bridge" type="bridge_node" name="swarm_bridge_node1" output="screen" >
+    <rosparam command="load" file="$(find swarm_ros_bridge)/config/multi_agent/test_ros_topics_3.yaml" />
+  </node>
+</group>
+</launch>
