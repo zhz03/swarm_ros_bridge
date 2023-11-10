@@ -9,6 +9,7 @@
 IP:
   self: '*'   # '*' stands for all self IPs
   robot2: 192.168.3.12
+  robot3: 192.168.3.11
   test_local: 127.0.0.1 # just for local machine test
 
 ####### Send these ROS messages to remote robots #######
@@ -58,3 +59,24 @@ recv_topics:
   srcIP: robot2 # self IP 
   max_freq: 10 # max sending frequency (Hz) int
   srcPort: 3004 # message source port
+
+- topic_name: /tracking3/transformed_objects_box_score_label # the received messages will be published in this topic
+  msg_type: visualization_msgs/MarkerArray # ROS message type (rosmsg style)
+  srcIP: robot3 # message source IPname
+  max_freq: 10 # max sending frequency (Hz) int
+  srcPort: 3005 # message source port
+- topic_name: /os_header_se # send the messages of this ROS topic
+  msg_type: std_msgs/Header # ROS message type (rosmsg style)
+  max_freq: 10 # max sending frequency (Hz) int
+  srcIP: robot3 # message source IPname
+  srcPort: 3006 # ports of send_topics should be different
+- topic_name: /tracking3/transformed_objects_header_box_score_label # the received messages will be published in this topic
+  msg_type: visualization_header_msgs/MarkerArrayHeader # ROS message type (rosmsg style)
+  srcIP: robot3 # self IP 
+  max_freq: 10 # max sending frequency (Hz) int
+  srcPort: 3007 # message source port
+- topic_name: /tracking3/transformed_det_box_score_label # the received messages will be published in this topic
+  msg_type: visualization_msgs/MarkerArray # ROS message type (rosmsg style)
+  srcIP: robot3 # self IP 
+  max_freq: 10 # max sending frequency (Hz) int
+  srcPort: 3008 # message source port

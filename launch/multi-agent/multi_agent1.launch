@@ -2,7 +2,7 @@
 <launch>
 <group ns="sim1">
   <node pkg="swarm_ros_bridge" type="bridge_node" name="swarm_bridge_node1" output="screen" >
-    <rosparam command="load" file="$(find swarm_ros_bridge)/config/multi_agent/test_ros_topics_1.yaml" />
+    <rosparam command="load" file="$(find swarm_ros_bridge)/config/multi_agent/ros_topics_1.yaml" />
   </node>
 </group>
 </launch>

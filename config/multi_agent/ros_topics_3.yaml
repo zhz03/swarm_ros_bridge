@@ -18,22 +18,22 @@ send_topics:
   msg_type: visualization_msgs/MarkerArray # ROS message type (rosmsg style)
   srcIP: self # message source IPname
   max_freq: 10 # max sending frequency (Hz) int
-  srcPort: 3001 # message source port
-- topic_name: /os_header # send the messages of this ROS topic
+  srcPort: 3005 # message source port
+- topic_name: /os_header_se # send the messages of this ROS topic
   msg_type: std_msgs/Header # ROS message type (rosmsg style)
   max_freq: 10 # max sending frequency (Hz) int
   srcIP: self # message source IPname
-  srcPort: 3002 # ports of send_topics should be different
+  srcPort: 3006 # ports of send_topics should be different
 - topic_name: /tracking2/transformed_objects_header_box_score_label # the received messages will be published in this topic
   msg_type: visualization_header_msgs/MarkerArrayHeader # ROS message type (rosmsg style)
   srcIP: self # self IP 
   max_freq: 10 # max sending frequency (Hz) int
-  srcPort: 3003 # message source port
+  srcPort: 3007 # message source port
 - topic_name: /tracking2/transformed_det_box_score_label # the received messages will be published in this topic
   msg_type: visualization_msgs/MarkerArray # ROS message type (rosmsg style)
   srcIP: self # self IP 
   max_freq: 10 # max sending frequency (Hz) int
-  srcPort: 3004 # message source port
+  srcPort: 3008 # message source port
 
 ####### receive these ROS messages from remote robots #######
 ## if no recv_topics needed, comment all these out
